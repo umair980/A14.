@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="java1.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p>Click the button below to open pop-up box.</p>
+
+<button onclick="myFunction()">Button</button>
+
+<p id="demo"></p>
+<script>
+
+    function myFunction() {
+        var name = prompt("Please enter your name", "enter name");
+        if (name != null) {
+            document.getElementById("demo").innerHTML =
+                "Hello " + name + "! How are you today?";
+            document.cookie = name
+        }
+    }
+
+</script>
+
+</body>
+<footer>
+    <p>&copy; Umair Sindhu, 04/11/2020</p>
+</footer>
+</html>

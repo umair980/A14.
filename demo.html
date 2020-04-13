@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="java1.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p>Click the button to demonstrate the prompt box.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+<script>
+
+    function myFunction() {
+        var person = prompt("Please enter your name", person);
+        if (person != null) {
+            document.getElementById("demo").innerHTML =
+                "Hello " + person + "! How are you today?";
+        document.cookie = person
+        }
+        document.cookie = person + "=" + ";" + ";path=/";
+        var name =  person + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return name;
+    }
+    function getCookie() {
+        var name =  + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+</script>
+</div>
+</body>
+</html>
